@@ -1,0 +1,99 @@
+\begin{conclude}
+ \chapter{Conclusions~}
+ \hyperlink{toc}{Return to TOC}
+ 
+  This thesis has highlighted the significance of ion solvation across the biological, chemical, and physical spectrum of science. I began the discussion
+  with a review of Hofmeister's observations noting the varying precipitating capacity of different salts on egg white proteins. From this, I developed
+  the narrative that explaining these effects from a modeling perspective was simply too difficult and the conclusions of different experiments often
+  conflicted with one another. This in turn motivated study of the simplest case, where building a model for more complex systems might be more approachable.
+  The target of these simpler studies is the determination of a single-ion solvation free energy scale from which other properties such as activities, 
+  osmotic coefficients, surface tensions increments, and surface potential increments might also be established. The challenge in addressing this scale 
+  was found to be two-fold: 1) it is unclear what level of theory is appropriate for handling ion solvation problems and 2) experimental determination of
+  the bulk values of these properties is impossible without the use of a \emph{hopefully} reasonable assumption. As regards the first challenge, I reviewed
+  an extensive body of literature which found non-electrostatic contributions evaluated at the electronic structure level and the granularity of all-atom 
+  models to be necessary to achieve spectroscopic/thermochemical accuracy. For the second, I made the case that the generally binary split of experimental
+  single-ion scales was linked by the surface potential of water and that such potentials would be present for other systems as well.
+  
+  In Chapters \ref{ch3:sec0:level1} and \ref{ch4:sec0:level1} I discussed my own contributions addressing the first of these challenges. I used quantum
+  chemistry calculations and an energy partitioning scheme on small alkali/water and halide/water clusters to divvy up the interaction energy into chemically
+  informative contributions. These fragments included non-electrostatic pieces like polarization, charge transfer, and dispersion. I discovered that in anion/water
+  clusters, these contributions accounted for about 33\% of the total attractive part of the interaction energy. The rest was due to electrostatics. While
+  dispersion was found to be appreciably less important in cation/water clusters, polarization played a significant role as well. The electronic charge 
+  assigned to individual atoms can be partitioned as well. The charge on the ion was monitored with increasing hydration number. With \emph{n} = 6 waters
+  attached to the ion, some 20\% of the excess charge of anions was shared with neighboring waters. A visual of this was provided as well, outlining poles
+  in the electron density of the anion directed at each of the waters. It was found, in agreement with previous studies, that the non-electrostatic 
+  interactions saturated or nearly saturated within the first solvation shell. This implies that simpler electrostatic models of ion solvation are suitable
+  for handling longer-ranged aspects of ion solvation, greatly reducing the computational cost of calculating accurate properties.
+  
+  The focus on local interactions was extended in Chapter \ref{ch4:sec0:level1} to the non-aqueous solvents ethylene and propylene carbonate which are
+  used in Li-ion batteries and supercapacitors. Ion solvation is especially important in the continued evolution of energy storage materials with solvation
+  free energies an indicator of an electrolyte's ion transport properties\cite{husch2015large}. Very little free energy work has been done with these solvents
+  despite their presence in our everyday lives through cell phones, laptops, and many other devices. Previous simulation results from our group suggested classical
+  force fields lacked the flexibility to properly mimic polarization, with a standard model underestimating the effect and a corrected model overestimating it.
+  \emph{Ab initio} molecular dynamics simulations were performed for the ethylene and propylene carbonate solvents. I compared the average dipole moment
+  of these solvents in the gas phase, liquid phase, and solvating a single Li\sur{+} ion. The induced dipole moment of a molecule in a field is related to 
+  the polarizability of the molecule. Relative to the gas phase, I found the dipole moment of each of these solvents increased 34\% over the gas phase
+  average when simulating the liquid phase and slightly over 50\% for molecules in the first solvation shell of the ion. This is odd behavior compared to
+  water where it's been found that the water dipole moment near ions is nearly the same as in the bulk. This study is not yet complete, but I have already
+  learned that an explicit treatment of polarizability in these solvents is essential for modeling the local solvation structure near ions. I hope to also
+  determine the strength of the induced dipole-induced dipole repulsion interaction between the first shell molecules and relate it back to our initial
+  study of the thermodynamic data.
+  
+  The last pair of chapters of my thesis dealt with the surface potential of water and the implications of my interpretation of this potential on force
+  field development and molecular simulation in general. In Chapter \ref{ch5:sec0:level1}, I used a novel approach involving the sequential hydration
+  energies of Na\sur{+}/water and F\sur{-}/water clusters. This builds off an existing approach called the cluster pair approximation but makes no 
+  extrathermodynamic assumption to extrapolate from small cluster data to the bulk. I evaluated the energy differences to \emph{n}
+  = 200, well past the bulk limit of \emph{n} = 105, using a polarizable force field model. For clusters up to \emph{n} = 35, I was able to compare the
+  results with MP2 level quantum chemistry. These results showed a shift in the sequential hydration enthalpy not observed by the cluster pair approximation,
+  which assumed the small differences in these values for small clusters remained small in the limit of \emph{n} $\rightarrow \infty$. The shift reflected
+  preferential anion solvation with the addition of the second hydration shell. The shift is supported by even higher level calculations at the CCSD(T)
+  level of theory. The deviation from the reportedly \emph{ideal} behavior of this ion pair settled around -8 kcal/mol. A simple rearrangement in the
+  expression for the solvation enthalpy allowed me to solve for the electrochemical surface potential of water at -0.4 V. Several indirect evidences
+  support this figure over the recommended literature value of +0.13 V which is an average of values ranging from -0.5 V to +3--4 V in the literature.
+  I argued this average is a compilation of two different surface potential contributions ($\phi\sous{np}$ and $\phi\sous{sp}$) and so is nonphysical.
+  My work also supports a small surface potential temperature derivative which is supported by an overlooked paper by Gabdoulline et al.\cite{gabdoulline1997mean}.
+  
+  Recalling that $\phi\sous{np}$ = $\phi\sous{sp}$ + $\phi\sous{lp}$, in the last chapter of this thesis I show that a local interfacial potential
+  $\phi\sous{lp}$ contributes to ion solvation properties even in periodic boundary conditions. This potential depends on the solvent and force field 
+  used to simulate it. I illustrated its influence by calculating the solvation free energy of large spherical ions approaching the size of the
+  tetraphenyl arsonium and tetraphenyl borate ions. The large size and screening ligands are believed to mask the sign of the charge at the core, giving 
+  these ions equal solvation free energies in \emph{all} solvents. Previous studies had shown water to significantly favor the anion by approximately
+  20 kcal/mol. I used quasichemical theory to partition the solvation free energy into an ion nonspecific packing contribution, ion specific inner shell
+  or chemical contribution, and a long ranged term. The long ranged term contains contributions from the vdW potential and if conditioned properly an
+  accurately Gaussian electrostatic part. I showed that the mean-field term in a cumulant expansion of this energy, which is associated with the local
+  potential, was the source of the disparity between the anion and cation solvation free energies. By removing it, I found that the tetraphenyl arsonium 
+  and tetraphenyl borate ions shared nearly identical solvation properties in SPC/E modeled water and OPLS/AA modeled dimethyl sulfoxide. However, 
+  an anion favoring asymmetry persisted in the low dielectric 1,2-dichloroethane solvent also modeled with OPLS/AA. This result has profound implications
+  in the force field development community as it brings to light the source of a glaring problem which has led to a great amount of inconsistency in 
+  the fitting of parameters. My work almost demands that we as a community attempt some level of standardization as to how we work with these potentials,
+  how changing parameters to match this experiment or that (which can differ by the presence of these potentials) affects the solvation structure, and
+  how best to relate simulation to experiment so that the symbiotic relationship developed between the approaches can be maintained.
+  
+  \vspace{12mm}  
+  
+  \begin{wbepi}{\#LOTRYourResearch}
+   It's a dangerous business, Sodium, crossing the air/water interface. You step into the solvent, and if you don't know the real surface potential, 
+   there's no knowing where you might be swept off to.
+  \end{wbepi}
+ 
+  \vspace{6mm}
+  
+  High-five, you did it!
+  
+  \vspace{6mm}
+
+  \begin{wbepi}{Philip J. Fry, Futurama}
+   Indeed so. Most indeedly.
+  \end{wbepi}  
+  
+  \vspace{6mm}
+  
+  In triumph, we sing!
+  
+  \vspace{6mm}  
+  
+  \begin{wbepi}{Tom Servo, Mystery Science Theater 3000}
+   Oh baby, Rowsdower saves us and saves all the world!
+  \end{wbepi}  
+  
+\end{conclude}
